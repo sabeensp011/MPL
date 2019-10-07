@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<p>Todays task</p>
+	<p id="demo1">abc</p>
+<script type="text/javascript">
+//PARENT CLASS
+class student{
+	constructor(name,fathername,age){
+		this.name=name;
+		this.fathername=fathername;
+		this.age=age;
+
+	}
+	//BY  SETTER  WE CAN SET ANY PAPRAMETER THAT WE PASSED IN CONSTRUCTOR
+	set set_age(age){
+		this.age=age;
+	}
+	get get_age(){
+		return this.age;
+	}
+}
+//INHERTING CHILD(CS) CLASS FROM  PARENT i-e (STUDENT CLASS)
+class cs extends student{
+	constructor(name,fathername,age,fyp_title){
+		super(name,fathername,age);
+		this.fyp_title=fyp_title;
+		//SUPER HELPS IN INHERTING PARAMERTRS FROM PARENT CLAS
+	}
+	set set_fyp_title(fyp_title){
+		this.fyp_title=fyp_title;
+	}
+	get get_fyp_title(){
+		return this.fyp_title;
+	}
+
+}
+//INHERTING CHILD(CS) CLASS FROM  PARENT i-e (STUDENT CLASS)
+class managmnt extends student{
+	constructor(name,fathername,age,ind_name){
+		super(name,fathername,age);
+		//SUPER HELPS IN INHERTING PARAMERTRS FROM PARENT CLAS
+		this.ind_name=ind_name;
+		// 
+
+	}
+	set set_ind_name(ind_name){
+		this.ind_name=ind_name;
+	}
+	get get_ind_name(){
+		return this.ind_name;
+		
+	}
+}
+student_obj=new student("ali","hassan",28);
+cs_std=new cs("hassan","ali",15,"Cardi-Onic");
+mgt_std=new managmnt("asad","ali",15,"abc");
+console.log(student_obj);
+console.log(cs_std);
+console.log(mgt_std);
+student_obj.set_age=33;
+
+console.log(student_obj);
+cs_std.set_fyp_title="gender identifier";
+console.log(cs_std);
+mgt_std.set_ind_name="xyz";
+console.log(mgt_std);
+
+</script>
+</body>
+</html>
