@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- 	<p>COncept of Inheritance</p>
+	<p id="demo1">MultiLevel Inheritance</p> -->
+<script>
+
+class car{
+	constructor(cmp_name,model,color){
+		this.cmp_name=cmp_name;
+		this.model=model;
+		this.color=color;
+	}
+	printdetail(){
+		console.log("CAr company name is : "+this.cmp_name +"car model is :"+this.model+ "color is :"+ this.color);
+	}
+}
+class corolla extends car{
+	
+	constructor(cmp_name,model,color,price,type){
+		super(cmp_name,model,color)
+		this.price=price;
+		this.type=type;
+	}
+	printcorola()
+	{
+		console.log("first child_class detail");
+		console.log("price is :" +this.price + "and type is " +this.type);
+	}
+}
+class BMW extends corolla{
+	constructor(cmp_name,model,color,price,series,nature){
+		super(cmp_name,model,color,price)
+		this.series=series;
+		this.nature=nature;
+	}
+	detail(){
+		console.log("Company_name :"+this.cmp_name+"\nModel:"+this.model+"\nColor:"+this.color+"\nPrice"+this.price+"\nSeries:"+this.series+"\nNature"+this.nature);
+	}
+}
+
+car_detail=new BMW("BMW","2020","Red","800k","8th","AutoMatic");
+car_detail.detail()
+
+
+
+</script>
+</body>
+</html>
