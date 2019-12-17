@@ -21,12 +21,7 @@ class retry extends Component{
     );
   }
 }
-registeruser=()=>{
-  if (this.state.username=='' || this.state.useremail=='' ||this.state.userpasword=='')
-  {
-    this.props.navigation.navigate('retry');
-  }
-}
+
  class Layout extends Component{
 
   constructor (props){
@@ -37,6 +32,17 @@ registeruser=()=>{
       userpasword:" "
       };
   }
+  registeruser=()=>{
+    if (this.state.username!=" "  && this.state.useremail!=" " && this.state.userpasword!=" ")
+    {
+      this.props.navigation.navigate('register');
+    }
+    else
+    {
+      this.props.navigation.navigate('retry');
+    }
+  }
+
 
   render(){
     return(
@@ -69,7 +75,7 @@ registeruser=()=>{
                     <TextInput placeholder="Enter User Email" onChangeText={text=>this.setState({userpasword:text})} style={{textAlign:'center',justifyContent:'center',backgroundColor:'white',marginTop:50}}/>
                     <TextInput placeholder="Enter User Password" secureTextEntry={true} onChangeText={text=>this.setState({useremail:text})} style={{textAlign:'center',justifyContent:'center',backgroundColor:'white',marginTop:50}}/>
                    
-                <Button title={"Login"} onPress={()=>this.props.navigation.navigate('register')}></Button>
+                 <Button title={"Login"} onPress={()=>this.registeruser()}></Button>
                 </View>
 
                 {/* <Text style={{color:'white',fontWeight:'bold',marginTop:50}}>  Welcome to {this.state.username}</Text> */} 
